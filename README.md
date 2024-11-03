@@ -1,6 +1,6 @@
 # aport
 
-## Fast scanner host opened ports in 10 second.
+## Fast scanner host open ports in 10 second.
 
 ### Compile:
 ```
