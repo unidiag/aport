@@ -36,6 +36,7 @@ func scanAllPorts(host string, timeout time.Duration) []int {
 				openPorts = append(openPorts, port)
 				mu.Unlock()
 			}
+			fmt.Printf("%d    \r", port)
 		}(port)
 	}
 
