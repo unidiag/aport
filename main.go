@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net"
 	"os"
+	"strconv"
 	"sync"
 	"time"
 )
@@ -47,13 +48,18 @@ func scanAllPorts(host string, timeout time.Duration) []int {
 func main() {
 	startTime := time.Now()
 	host := ""
+	ms := time.Duration(150)
 	if len(os.Args) > 1 {
 		host = os.Args[1]
+		if len(os.Args) == 3 {
+			msInt, _ := strconv.Atoi(os.Args[2]) // Конвертируем ms в int
+			ms = time.Duration(msInt)            // Преобразуем в time.Duration
+		}
 	} else {
 		fmt.Printf("Usage: %s example.com\n       %s 192.168.1.10\n", os.Args[0], os.Args[0])
 		os.Exit(0)
 	}
-	timeout := 150 * time.Millisecond
+	timeout := ms * time.Millisecond
 
 	openPorts := scanAllPorts(host, timeout)
 	if len(openPorts) == 0 {
