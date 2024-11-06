@@ -21,7 +21,7 @@ Took: 9.954s
 root@nuc:/aport# 
 ```
 
-For more accurate scanning, use the second delay parameter in msec:
+For more accurate scanning, use the second delay parameter in msec (default = 150 msec):
 ```
 root@nuc:/aport# ./aport tvcas.com 500
 tvcas.com:80
