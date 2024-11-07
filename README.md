@@ -34,3 +34,6 @@ tvcas.com:2078
 Took: 19.842s
 root@nuc:/aport# 
 ```
+
+## fake_port.py
+This Python script creates a fake port on the server (default 22411). Connecting to it results in sending a message to Telegram (IP, country).
