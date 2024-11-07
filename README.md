@@ -4,7 +4,11 @@
 
 ### Compile:
 ```
+# linux
 go build -ldflags "-linkmode external -extldflags '-static'" -o aport
+
+# windows
+go build -o aport.exe main
 ```
 
 ### Usage:
